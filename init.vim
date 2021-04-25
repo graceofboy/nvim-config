@@ -27,6 +27,12 @@ set termencoding=utf-8
 set fileencoding=utf-8
 let mapleader=","
 
+map <silent> <A-h> <C-w><
+map <silent> <A-j> <C-W>-
+map <silent> <A-k> <C-W>+
+map <silent> <A-l> <C-w>>
+
+
 " 中文测试
 " copy some with system
 set clipboard+=unnamedplus
@@ -77,9 +83,16 @@ function! s:find_git_root()
   return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
 endfunction
 command! ProjectFiles execute 'Files' s:find_git_root()
-map <C-p> :ProjectFiles<CR>
+function! s:change_to_project(project)
+exec 'tabedit '.a:project
+exec 'lcd '.a:project
+endfunction
+command! Project call fzf#run(fzf#wrap({'sink': function('s:change_to_project'), 'source': "find ~/WorkSpace -type d -exec test -e '{}/.git' ';' -print -prune"}))
+map <C-f> :ProjectFiles<CR>
+map <C-p> :Project<CR>
 map <C-h> :History<CR>
 map <C-s> :BLines<CR>
+map <C-b> :Buffers<CR>
 
 " coc
 " Formatting selected code.
@@ -120,9 +133,8 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 
-" easymotion
+"" easymotion
 nmap s <Plug>(easymotion-overwin-f2)
-
 " Move to line
 nmap <C-l> <Plug>(easymotion-overwin-line)
 
@@ -142,3 +154,4 @@ nmap <silent> <Leader>r <Plug>TranslateR
 vmap <silent> <Leader>r <Plug>TranslateRV
 " Translate the text in clipboard
 nmap <silent> <Leader>x <Plug>TranslateX
+
