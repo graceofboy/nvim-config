@@ -152,8 +152,8 @@ nmap <C-l> <Plug>(easymotion-overwin-line)
 " nmap <silent> <Leader>t <Plug>Translate
 " vmap <silent> <Leader>t <Plug>TranslateV
 " Display translation in a window
-nmap <silent> <Leader>w <Plug>TranslateW
-vmap <silent> <Leader>w <Plug>TranslateWV
+nmap <silent> <Leader>w <Plug>Translate
+vmap <silent> <Leader>w <Plug>TranslateV
 " Replace the text with translation
 nmap <silent> <Leader>r <Plug>TranslateR
 vmap <silent> <Leader>r <Plug>TranslateRV
