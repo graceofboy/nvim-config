@@ -93,6 +93,8 @@ map <C-p> :Project<CR>
 map <C-h> :History<CR>
 map <C-s> :BLines<CR>
 map <C-b> :Buffers<CR>
+" TOOD: 解决fzf快速切换窗口报E315的错误？
+let g:fzf_prefer_tmux = 1
 
 " coc
 " Formatting selected code.
@@ -132,6 +134,9 @@ let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
+let g:go_term_enabled = 1
+nmap <silent> <Leader>t :GoTestFunc<CR>
+vmap <silent> <Leader>t :GoTestFunc<CR>
 
 "" easymotion
 nmap s <Plug>(easymotion-overwin-f2)
@@ -144,8 +149,8 @@ nmap <C-l> <Plug>(easymotion-overwin-line)
 
 """ Translate Configuration example
 " Echo translation in the cmdline
-nmap <silent> <Leader>t <Plug>Translate
-vmap <silent> <Leader>t <Plug>TranslateV
+" nmap <silent> <Leader>t <Plug>Translate
+" vmap <silent> <Leader>t <Plug>TranslateV
 " Display translation in a window
 nmap <silent> <Leader>w <Plug>TranslateW
 vmap <silent> <Leader>w <Plug>TranslateWV
