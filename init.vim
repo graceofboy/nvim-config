@@ -27,6 +27,9 @@ set termencoding=utf-8
 set fileencoding=utf-8
 let mapleader=","
 
+nmap <silent> <Leader>f :e%:h<CR>
+vmap <silent> <Leader>f :e%:h<CR>
+
 map <silent> <A-h> <C-w><
 map <silent> <A-j> <C-W>-
 map <silent> <A-k> <C-W>+
