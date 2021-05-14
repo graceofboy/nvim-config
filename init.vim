@@ -26,6 +26,7 @@ set encoding=utf-8
 set termencoding=utf-8
 set fileencoding=utf-8
 let mapleader=","
+set langmenu=zh_CN.UTF-8
 
 nmap <silent> <Leader>f :e%:h<CR>
 vmap <silent> <Leader>f :e%:h<CR>
@@ -63,6 +64,7 @@ Plug 'airblade/vim-rooter'
 Plug 'easymotion/vim-easymotion'
 Plug 'Raimondi/delimitMate'
 Plug 'voldikss/vim-translator'
+Plug 'diepm/vim-rest-console'
 call plug#end()
 
 colorscheme palenight
@@ -163,3 +165,5 @@ vmap <silent> <Leader>r <Plug>TranslateRV
 " Translate the text in clipboard
 nmap <silent> <Leader>x <Plug>TranslateX
 
+" http client
+let g:vrc_split_request_body = 1
