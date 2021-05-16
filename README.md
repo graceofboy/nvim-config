@@ -25,5 +25,5 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ```
 # use
 ```
-ln -sf init.vim ~/.config/nvim/init.vim
+ln init.vim ~/.config/nvim/init.vim
 ```
