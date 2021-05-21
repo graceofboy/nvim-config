@@ -89,7 +89,8 @@ function! s:find_git_root()
 endfunction
 command! ProjectFiles execute 'Files' s:find_git_root()
 function! s:change_to_project(project)
-exec 'tabedit '.a:project
+" exec 'tabedit '.a:project
+exec 'e '.a:project
 exec 'lcd '.a:project
 endfunction
 command! Project call fzf#run(fzf#wrap({'sink': function('s:change_to_project'), 'source': "find ~/WorkSpace -type d -exec test -e '{}/.git' ';' -print -prune"}))
